@@ -24,5 +24,7 @@ namespace KetamaHash
 
          StoreNode GetPrimary(string k);
 
+        double Test();
+
     }
 }

@@ -6,3 +6,4 @@ E:\Study\vs\Hash\KetamaHash\bin\Debug\netstandard2.0\KetamaHash.dll
 E:\Study\vs\Hash\KetamaHash\bin\Debug\netstandard2.0\KetamaHash.pdb
 E:\Study\vs\Hash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.dll
 E:\Study\vs\Hash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.pdb
+E:\Study\vs\Hash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.csprojAssemblyReference.cache

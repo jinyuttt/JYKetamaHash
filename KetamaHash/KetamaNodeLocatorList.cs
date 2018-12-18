@@ -18,6 +18,7 @@
 
 
 using KetamaHash.MurmurHash;
+using KetamaHash.NodeList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,14 +36,14 @@ namespace KetamaHash
 
     public class KetamaNodeLocatorList:IKetamaHash
     {
-        private IDictionary<ulong, StoreNode> ketamaNodes = null;
-       
+       private IDictionary<ulong, StoreNode> ketamaNodes = null;
+      
         private int numReps = 160;
 
         public KetamaNodeLocatorList()
         {
             // SortedDictionary<long, StoreNode>;
-            ketamaNodes = new SortedList<ulong, StoreNode>();
+            ketamaNodes = new SortedList<ulong, StoreNode>(0);
         }
 
         public void AddNode(List<StoreNode> nodes, int nodeCopies = 0)
@@ -53,7 +54,7 @@ namespace KetamaHash
             {
                 numReps = nodeCopies;
             }
-
+            ketamaNodes = new SortedList<ulong, StoreNode>(numReps * nodes.Count);
             //对所有节点，生成nCopies个虚拟结点
             foreach (StoreNode node in nodes)
             {
@@ -125,10 +126,16 @@ namespace KetamaHash
             }
         }
 
+        public double Test()
+        {
+            throw new NotImplementedException();
+        }
+
         StoreNode GetNodeForKey(ulong hash)
         {
             StoreNode rv =null;
             ulong key = hash;
+
             //如果找到这个节点，直接取节点，返回   
             if (!ketamaNodes.ContainsKey(key))
             {
@@ -153,6 +160,7 @@ namespace KetamaHash
             }
             rv = ketamaNodes[key];
             return rv;
+           
         }
     }
 }

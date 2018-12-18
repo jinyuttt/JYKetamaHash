@@ -29,9 +29,9 @@ namespace KetamaHash
         /** key's count */
         private const int EXE_TIMES = 100000;
 
-        private const int NODE_COUNT = 100;
+        private const int NODE_COUNT = 1000;
 
-        private const int VIRTUAL_NODE_COUNT = 160;
+        private const int VIRTUAL_NODE_COUNT = 1600;
 
 
       private IKetamaHash locator = null;
@@ -53,8 +53,7 @@ namespace KetamaHash
 
             for (int k = 1; k <= nodeCount; k++)
             {
-               
-                StoreNode node = new StoreNode() { Name = "node" + k, IP = "192.168.3.1" + k, Port = 7123 + k };
+                StoreNode node = new StoreNode() { Name = "Node", IP = "192.168.3.1" + k, Port = 7123 + k };
                 nodes.Add(node);
             }
            
@@ -95,15 +94,7 @@ namespace KetamaHash
          */
         private static string GenerateRandomString(int length)
         {
-            //string str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._";
-            //Random random = new Random();
-            //StringBuilder sb = new StringBuilder();
-            //for (int i = 0; i < length; i++)
-            //{
-            //    int number = random.Next(64);
-            //    sb.Append(str[number]);
-            //}
-            //return sb.ToString();
+           
             StringBuilder sb = new StringBuilder(length);
             for (int i = 0; i < length; i++)
             {
@@ -158,6 +149,11 @@ namespace KetamaHash
                 AddNode(null);
             }
             return GetStoreNode(GetCurrentKey());
+        }
+
+        public double Test()
+        {
+           return locator.Test();
         }
     }
 }

@@ -78,7 +78,7 @@ namespace KetamaHash.MurmurHash
         /// <returns></returns>
         public static byte[] ComputeMurmur(string k)
         {
-            Murmur128 murmur =MurmurHash.Create128(Ticks);
+            Murmur128 murmur =MurmurHash.Create128((uint)Environment.TickCount);
             byte[] digest = murmur.ComputeHash(Encoding.UTF8.GetBytes(k));
             murmur.Clear();
             murmur.Dispose();
