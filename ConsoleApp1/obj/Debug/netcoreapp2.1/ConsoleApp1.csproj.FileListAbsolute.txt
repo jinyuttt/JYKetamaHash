@@ -1,0 +1,14 @@
+E:\Study\vs\Hash\ConsoleApp1\bin\Debug\netcoreapp2.1\ConsoleApp1.deps.json
+E:\Study\vs\Hash\ConsoleApp1\bin\Debug\netcoreapp2.1\ConsoleApp1.runtimeconfig.json
+E:\Study\vs\Hash\ConsoleApp1\bin\Debug\netcoreapp2.1\ConsoleApp1.runtimeconfig.dev.json
+E:\Study\vs\Hash\ConsoleApp1\bin\Debug\netcoreapp2.1\ConsoleApp1.dll
+E:\Study\vs\Hash\ConsoleApp1\bin\Debug\netcoreapp2.1\ConsoleApp1.pdb
+E:\Study\vs\Hash\ConsoleApp1\obj\Debug\netcoreapp2.1\ConsoleApp1.csprojAssemblyReference.cache
+E:\Study\vs\Hash\ConsoleApp1\obj\Debug\netcoreapp2.1\ConsoleApp1.csproj.CoreCompileInputs.cache
+E:\Study\vs\Hash\ConsoleApp1\obj\Debug\netcoreapp2.1\ConsoleApp1.AssemblyInfoInputs.cache
+E:\Study\vs\Hash\ConsoleApp1\obj\Debug\netcoreapp2.1\ConsoleApp1.AssemblyInfo.cs
+E:\Study\vs\Hash\ConsoleApp1\obj\Debug\netcoreapp2.1\ConsoleApp1.csproj.CopyComplete
+E:\Study\vs\Hash\ConsoleApp1\obj\Debug\netcoreapp2.1\ConsoleApp1.dll
+E:\Study\vs\Hash\ConsoleApp1\obj\Debug\netcoreapp2.1\ConsoleApp1.pdb
+E:\Study\vs\Hash\ConsoleApp1\bin\Debug\netcoreapp2.1\KetamaHash.dll
+E:\Study\vs\Hash\ConsoleApp1\bin\Debug\netcoreapp2.1\KetamaHash.pdb
