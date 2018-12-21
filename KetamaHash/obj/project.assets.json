@@ -183,11 +183,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Study\\vs\\Hash\\KetamaHash\\KetamaHash.csproj",
+      "projectUniqueName": "E:\\Study\\vs\\Hash_Murmur\\LoadBalanceHash\\KetamaHash\\KetamaHash.csproj",
       "projectName": "KetamaHash",
-      "projectPath": "E:\\Study\\vs\\Hash\\KetamaHash\\KetamaHash.csproj",
+      "projectPath": "E:\\Study\\vs\\Hash_Murmur\\LoadBalanceHash\\KetamaHash\\KetamaHash.csproj",
       "packagesPath": "C:\\Users\\jinyu\\.nuget\\packages\\",
-      "outputPath": "E:\\Study\\vs\\Hash\\KetamaHash\\obj\\",
+      "outputPath": "E:\\Study\\vs\\Hash_Murmur\\LoadBalanceHash\\KetamaHash\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

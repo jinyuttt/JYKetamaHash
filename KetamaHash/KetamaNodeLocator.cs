@@ -160,7 +160,7 @@ namespace KetamaHash
         /// </summary>
         /// <param name="hash"></param>
         /// <returns></returns>
-        StoreNode GetNodeForKey(ulong hash)
+      private  StoreNode GetNodeForKey(ulong hash)
         {
             //string rv=null;
             ulong key = hash;

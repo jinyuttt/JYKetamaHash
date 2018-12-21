@@ -13,46 +13,50 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            DateTime start = DateTime.Now;
-            ConsistencyRing hashRing = new ConsistencyRing();
-            Dictionary<string, int> sum = new Dictionary<string, int>();
-            int size = 100000;
-            int value = 0;
-            string key = "";
-            for (int i = 0; i < size; i++)
+            while (true)
             {
-                //Console.WriteLine(hashRing.GetCurrent());
-                key = hashRing.GetCurrent().ToString();
-               // Console.WriteLine(key);
-                if (sum.TryGetValue(key, out value))
+                Console.WriteLine("测试开始");
+               DateTime start = DateTime.Now;
+                ConsistencyRing hashRing = new ConsistencyRing();
+                Dictionary<string, int> sum = new Dictionary<string, int>();
+                int size = 1000000;
+                int value = 0;
+                string key = "";
+                for (int i = 0; i < size; i++)
                 {
-                    sum[key] = value + 1;
-                }
-                else
-                {
-                    sum[key] = 1;
-                }
+                    //Console.WriteLine(hashRing.GetCurrent());
+                    key = hashRing.GetCurrent().ToString();
+                    // Console.WriteLine(key);
+                    if (sum.TryGetValue(key, out value))
+                    {
+                        sum[key] = value + 1;
+                    }
+                    else
+                    {
+                        sum[key] = 1;
+                    }
 
-            }
-            Console.WriteLine("执行时间（秒）："+(DateTime.Now - start).TotalSeconds);
-            double d1 = 0;
-            double d2 = 100;
-            foreach (var item in sum)
-            {
-                double d = item.Value / (double)size * 100;
-                Console.WriteLine(item.Key + ":" + d);
-                if(d>d1)
-                {
-                    d1 = d;
                 }
-                if(d<d2)
+                Console.WriteLine("执行时间（秒）：" + (DateTime.Now - start).TotalSeconds);
+                double d1 = 0;
+                double d2 = 100;
+                foreach (var item in sum)
                 {
-                    d2 = d;
+                    double d = item.Value / (double)size * 100;
+                    Console.WriteLine(item.Key + ":" + d);
+                    if (d > d1)
+                    {
+                        d1 = d;
+                    }
+                    if (d < d2)
+                    {
+                        d2 = d;
+                    }
                 }
+                Console.WriteLine("命中的节点数：" + sum.Count);
+                Console.WriteLine("最大命中率：" + d1 + "%,最小命中率：" + d2 + "%");
+                Console.ReadLine();
             }
-            Console.WriteLine("命中的节点数："+sum.Count);
-            Console.WriteLine("最大命中率："+d1+"%,最小命中率："+d2+"%");
-            Console.Read();
             //MurmurHashFactory.
             //RedBlack<int, string> redBlack = new RedBlack<int, string>("node");
             //for (int i = 0; i < 1600; i++)
