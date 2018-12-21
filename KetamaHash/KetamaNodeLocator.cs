@@ -1,9 +1,7 @@
 ﻿using KetamaHash.MurmurHash;
-using KetamaHash.NodeList;
-using RedBlackCS;
+using RedBlackTree;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading;
 
@@ -18,7 +16,6 @@ namespace KetamaHash
 
         private RedBlack<ulong, StoreNode> ketamaNodes = null;
         private List<StoreNode> shards = new List<StoreNode>(); // 真实机器节点
-       
         private int numReps = 160;
 
         private ManualResetEventSlim resetEvent = new ManualResetEventSlim(true);
@@ -27,8 +24,7 @@ namespace KetamaHash
         {
             ketamaNodes = new RedBlack<ulong, StoreNode>("node");
         }
-       
-        
+    
         public void AddNode(List<StoreNode> nodes, int nodeCopies = 0)
         {
             resetEvent.Reset();
@@ -60,7 +56,6 @@ namespace KetamaHash
                         byte[] digest = MurmurHashFactory.ComputeMurmur(node.ToString() + i);
                         ulong key = MurmurHashFactory.Hash(digest);
                         ketamaNodes.Add(key, node);
-                      
                         lst.Add(key);
                     }
                     catch (RedBlackException ex)
@@ -83,15 +78,13 @@ namespace KetamaHash
                     }
                 }
             }
-            //启用Hash算法功能，由SortedList接管
-            ketamaNodes.UpdateSort();
             resetEvent.Set();
         }
 
         public void AddNode(StoreNode node)
         {
             resetEvent.Reset();
-             ketamaNodes.ResetTree();
+           // ketamaNodes.ResetTree();
              List<ulong> lst = new List<ulong>();
             for (int i = 0; i < numReps; i++)
             {
@@ -108,9 +101,9 @@ namespace KetamaHash
                     //}
                     byte[] digest = MurmurHashFactory.ComputeMurmur(node.ToString() + i);
                     ulong key = MurmurHashFactory.Hash(digest);
-                    Console.WriteLine(node.ToString() + i + ":" + key);
+                    //Console.WriteLine(node.ToString() + i + ":" + key);
                     ketamaNodes.Add(key, node);
-                    lst.Add(key);
+                   // lst.Add(key);
                 }
                 catch (RedBlackException ex)
                 {
@@ -148,16 +141,25 @@ namespace KetamaHash
             lst.Clear();
         }
 
+
+        /// <summary>
+        /// 获取服务节点
+        /// </summary>
+        /// <param name="k">Key</param>
+        /// <returns></returns>
         public StoreNode GetPrimary(string k)
         {
              Murmur128 murmur = MurmurHashFactory.MurmurHash.Create128((uint)Environment.TickCount);
             byte[] digest = murmur.ComputeHash(Encoding.UTF8.GetBytes(k));
             ulong key = MurmurHashFactory.Hash(digest);
-            StoreNode rv = GetNodeForKey(key);
-           
-            return rv;
+            return GetNodeForKey(key);
         }
 
+        /// <summary>
+        /// 获取节点
+        /// </summary>
+        /// <param name="hash"></param>
+        /// <returns></returns>
         StoreNode GetNodeForKey(ulong hash)
         {
             //string rv=null;
@@ -174,9 +176,34 @@ namespace KetamaHash
                  
         }
 
+       
+
+        /// <summary>
+        /// 测试使用
+        /// </summary>
+        public void Print()
+        {
+            //using (StreamWriter sw = new StreamWriter("allkeys.csv"))
+            //{
+            //    foreach(var item in dicnodes)
+            //    {
+            //        sw.WriteLine(item.Key + "," + item.Value);
+            //    }
+            //}
+            //using (StreamWriter sw = new StreamWriter("search.csv"))
+            //{
+            //    foreach (var item in lstNodes)
+            //    {
+            //        sw.WriteLine(item);
+            //    }
+            //}
+        }
+
+
         public double Test()
         {
-           return ketamaNodes.sumTime;
+            return 0;
         }
+        
     }
 }

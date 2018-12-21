@@ -29,9 +29,9 @@ namespace KetamaHash
         /** key's count */
         private const int EXE_TIMES = 100000;
 
-        private const int NODE_COUNT = 1000;
+        private const int NODE_COUNT = 100;
 
-        private const int VIRTUAL_NODE_COUNT = 1600;
+        private const int VIRTUAL_NODE_COUNT = 160;
 
 
       private IKetamaHash locator = null;
@@ -53,7 +53,7 @@ namespace KetamaHash
 
             for (int k = 1; k <= nodeCount; k++)
             {
-                StoreNode node = new StoreNode() { Name = "Node", IP = "192.168.3.1" + k, Port = 7123 + k };
+                StoreNode node = new StoreNode() { Name = "Node", IP = "192.168.3." + (k+100), Port = 7123 + k };
                 nodes.Add(node);
             }
            
@@ -154,6 +154,11 @@ namespace KetamaHash
         public double Test()
         {
            return locator.Test();
+        }
+
+        public void Print()
+        {
+             locator.Print();
         }
     }
 }

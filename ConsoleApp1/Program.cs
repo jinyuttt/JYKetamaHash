@@ -16,7 +16,7 @@ namespace ConsoleApp1
             DateTime start = DateTime.Now;
             ConsistencyRing hashRing = new ConsistencyRing();
             Dictionary<string, int> sum = new Dictionary<string, int>();
-            int size = 1000;
+            int size = 100000;
             int value = 0;
             string key = "";
             for (int i = 0; i < size; i++)
@@ -34,8 +34,7 @@ namespace ConsoleApp1
                 }
 
             }
-            Console.WriteLine((DateTime.Now - start).TotalSeconds);
-            Console.WriteLine(hashRing.Test());
+            Console.WriteLine("执行时间（秒）："+(DateTime.Now - start).TotalSeconds);
             double d1 = 0;
             double d2 = 100;
             foreach (var item in sum)
@@ -51,8 +50,8 @@ namespace ConsoleApp1
                     d2 = d;
                 }
             }
-            Console.WriteLine(sum.Count);
-            Console.WriteLine(d1+","+d2);
+            Console.WriteLine("命中的节点数："+sum.Count);
+            Console.WriteLine("最大命中率："+d1+"%,最小命中率："+d2+"%");
             Console.Read();
             //MurmurHashFactory.
             //RedBlack<int, string> redBlack = new RedBlack<int, string>("node");

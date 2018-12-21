@@ -110,6 +110,11 @@ namespace KetamaHash
             return rv;
         }
 
+        public void Print()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Remove(StoreNode node)
         {
             List<ulong> keys = new List<ulong>(1000);

@@ -26,7 +26,7 @@ using System.Collections;
 namespace KetamaHash.NodeList
 {
     /* ============================================================================== 
-    * 功能描述：StoreList 
+    * 功能描述：StoreList 测试项目
     * 创 建 者：jinyu 
     * 修 改 者：jinyu 
     * 创建日期：2018 

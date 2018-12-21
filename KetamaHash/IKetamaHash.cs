@@ -26,5 +26,7 @@ namespace KetamaHash
 
         double Test();
 
+        void Print();
+
     }
 }

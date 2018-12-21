@@ -1,0 +1,1 @@
+COPY mytable FROM 'E:\Study\vs\Hash\ConsoleApp1\bin\Debug\netcoreapp2.1\search.csv'  WITH CSV  HEADER
