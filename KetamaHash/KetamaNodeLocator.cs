@@ -168,6 +168,7 @@ namespace KetamaHash
             //得到大于当前key的那个子Map，然后从中取出第一个key，就是大于且离它最近的那个key
            // resetEvent.Wait();
             var cirCle = ketamaNodes.TailNode(key);
+           // var item = ketamaNodes.TailMap(key);
             if(cirCle==null)
             {
                 cirCle = ketamaNodes.First();

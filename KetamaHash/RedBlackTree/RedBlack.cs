@@ -794,6 +794,63 @@ namespace RedBlackTree
         }
 
         /// <summary>
+        /// Java实现方式，其实一个意思，只是更加细致
+        /// 一步到位，不用回找，但是二叉树树决定了回找最多4次
+        /// 所以和了我实现一致
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public RedBlackNode<TKey,TValue> TailNode1(TKey key)
+        {
+            RedBlackNode<TKey, TValue> p = rbTree;     // begin at root
+            while (p != null)
+            {
+                int cmp = key.CompareTo(p.Key);
+                // 情况一：若“p的key” > key。
+                // 若 p 存在左孩子，则设 p=“p的左孩子”；
+                // 否则，返回p
+                if (cmp < 0)
+                {
+                    if (p.Left != null)
+                        p = p.Left;
+                    else
+                        return p;
+                    // 情况二：若“p的key” < key。
+                }
+                else if (cmp > 0)
+                {
+                    // 若 p 存在右孩子，则设 p=“p的右孩子”
+                    if (p.Right != null)
+                    {
+                        p = p.Right;
+                    }
+                    else
+                    {
+                        // 若 p 不存在右孩子，则找出 p 的后继节点，并返回
+                        // 注意：这里返回的 “p的后继节点”有2种可能性：第一，null；第二，TreeMap中大于key的最小的节点。
+                        //   理解这一点的核心是，getCeilingEntry是从root开始遍历的。
+                        //   若getCeilingEntry能走到这一步，那么，它之前“已经遍历过的节点的key”都 > key。
+                        //   能理解上面所说的，那么就很容易明白，为什么“p的后继节点”又2种可能性了。
+                        RedBlackNode<TKey,TValue> parent = p.Parent;
+                        RedBlackNode<TKey, TValue> ch = p;
+                        while (parent != null && ch == parent.Right)
+                        {
+                            ch = parent;
+                            parent = parent.Parent;
+                        }
+                        return parent;
+                    }
+                    // 情况三：若“p的key” = key。
+                }
+                else
+                    return p;
+            }
+            return null;
+          
+        }
+
+
+        /// <summary>
         /// 回找最近的一个
         /// </summary>
         /// <param name="leaf"></param>
@@ -888,6 +945,51 @@ namespace RedBlackTree
             return findNode;
         }
 
+
+        /// <summary>
+        /// java实现版本
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+
+        public RedBlackNode<TKey, TValue> HeadNode1(TKey key)
+        {
+
+            RedBlackNode <TKey, TValue > p=rbTree;
+            while (p != null)
+            {
+                int cmp = key.CompareTo(p.Key);
+                if (cmp > 0)
+                {
+                    if (p.Right != null)
+                        p = p.Right;
+                    else
+                        return p;
+                }
+                else if (cmp < 0)
+                {
+                    if (p.Left != null)
+                    {
+                        p = p.Left;
+                    }
+                    else
+                    {
+                        RedBlackNode<TKey, TValue> parent = p.Parent;
+                        RedBlackNode<TKey, TValue> ch = p;
+                        while (parent != null && ch == parent.Left)
+                        {
+                            ch = parent;
+                            parent = parent.Parent;
+                        }
+                        return parent;
+                    }
+                }
+                else
+                    return p;
+
+            }
+            return null;
+        }
 
         /// <summary>
         /// 大于等于该Key的数据(测试很慢)
@@ -1051,7 +1153,6 @@ namespace RedBlackTree
             return dic;
 
         }
-
 
         /// <summary>
         /// 查找符合的Keys

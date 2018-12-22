@@ -24,7 +24,7 @@ namespace KetamaHash
     public class ConsistencyRing
     {
 
-        static Random ran = new Random(Environment.TickCount);
+        static Random rand = new Random(Environment.TickCount);
 
         /** key's count */
         private const int EXE_TIMES = 100000;
@@ -69,7 +69,7 @@ namespace KetamaHash
 
             for (int i = 0; i < EXE_TIMES; i++)
             {
-                allStrings.Add(GenerateRandomString(ran.Next(200)));
+                allStrings.Add(GenerateRandomString(rand.Next(200)));
             }
 
             return allStrings;
@@ -98,7 +98,7 @@ namespace KetamaHash
             StringBuilder sb = new StringBuilder(length);
             for (int i = 0; i < length; i++)
             {
-                sb.Append((char)(ran.Next(95) + 32));
+                sb.Append((char)(rand.Next(95) + 32));
             }
             return sb.ToString();
         }

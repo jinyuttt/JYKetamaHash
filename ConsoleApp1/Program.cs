@@ -26,6 +26,7 @@ namespace ConsoleApp1
                 {
                     //Console.WriteLine(hashRing.GetCurrent());
                     key = hashRing.GetCurrent().ToString();
+                   
                     // Console.WriteLine(key);
                     if (sum.TryGetValue(key, out value))
                     {
