@@ -30,7 +30,7 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "NGlWhlL3SngXtUEaMJcw2f5tNPiwxlnthQsey93A0gKqt55VsJtMaUf6WloJUs7wd2n1Xr6Ucjws/c3zB9wiFA==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -183,17 +183,18 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Study\\vs\\Hash_Murmur\\LoadBalanceHash\\KetamaHash\\KetamaHash.csproj",
+      "projectUniqueName": "E:\\Study\\vs\\Hash\\LoadBalanceHash\\KetamaHash\\KetamaHash.csproj",
       "projectName": "KetamaHash",
-      "projectPath": "E:\\Study\\vs\\Hash_Murmur\\LoadBalanceHash\\KetamaHash\\KetamaHash.csproj",
+      "projectPath": "E:\\Study\\vs\\Hash\\LoadBalanceHash\\KetamaHash\\KetamaHash.csproj",
       "packagesPath": "C:\\Users\\jinyu\\.nuget\\packages\\",
-      "outputPath": "E:\\Study\\vs\\Hash_Murmur\\LoadBalanceHash\\KetamaHash\\obj\\",
+      "outputPath": "E:\\Study\\vs\\Hash\\LoadBalanceHash\\KetamaHash\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\jinyu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -201,6 +202,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "d:\\Program Files\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

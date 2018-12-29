@@ -15,3 +15,11 @@ E:\Study\vs\Hash_Murmur\LoadBalanceHash\KetamaHash\obj\Debug\netstandard2.0\Keta
 E:\Study\vs\Hash_Murmur\LoadBalanceHash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.AssemblyInfo.cs
 E:\Study\vs\Hash_Murmur\LoadBalanceHash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.dll
 E:\Study\vs\Hash_Murmur\LoadBalanceHash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.pdb
+E:\Study\vs\Hash\LoadBalanceHash\KetamaHash\bin\Debug\netstandard2.0\KetamaHash.deps.json
+E:\Study\vs\Hash\LoadBalanceHash\KetamaHash\bin\Debug\netstandard2.0\KetamaHash.dll
+E:\Study\vs\Hash\LoadBalanceHash\KetamaHash\bin\Debug\netstandard2.0\KetamaHash.pdb
+E:\Study\vs\Hash\LoadBalanceHash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.csproj.CoreCompileInputs.cache
+E:\Study\vs\Hash\LoadBalanceHash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.AssemblyInfoInputs.cache
+E:\Study\vs\Hash\LoadBalanceHash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.AssemblyInfo.cs
+E:\Study\vs\Hash\LoadBalanceHash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.dll
+E:\Study\vs\Hash\LoadBalanceHash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.pdb

@@ -313,9 +313,11 @@ namespace RedBlackTree
             if (x != sentinelNode)              // set y as x's Parent
                 x.Parent = y;
         }
+      
         ///<summary>
         /// GetData
         /// Gets the data object associated with the specified key
+        /// No found throw exception
         ///<summary>
         public TValue GetData(TKey key)
         {
@@ -340,6 +342,61 @@ namespace RedBlackTree
             throw (new RedBlackException("RedBlackNode<TKey,TValue> key was not found") { Error = ReadBlackCode.KeyNotExists });
         }
 
+        /// <summary>
+        /// 扩展一个方法
+        /// 是否包含Key
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public  bool Contains(TKey key)
+        {
+            int result=-1;
+            RedBlackNode<TKey, TValue> treeNode = rbTree;     // begin at root
+            // traverse tree until node is found
+            while (treeNode != sentinelNode)
+            {
+                result = key.CompareTo(treeNode.Key);
+                if (result == 0)
+                {
+                 
+                    return true;
+                }
+                if (result < 0)
+                    treeNode = treeNode.Left;
+                else
+                    treeNode = treeNode.Right;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 扩展一个方法获取数据
+        /// 不报异常
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public  bool   TryGetValue(TKey key,out TValue value)
+        {
+            int result=-1;
+            value = default(TValue);
+            RedBlackNode<TKey, TValue> treeNode = rbTree;     // begin at root
+            // traverse tree until node is found
+            while (treeNode != sentinelNode)
+            {
+                result = key.CompareTo(treeNode.Key);
+                if (result == 0)
+                {
+                    value= treeNode.Value;
+                    return true;
+                }
+                if (result < 0)
+                    treeNode = treeNode.Left;
+                else
+                    treeNode = treeNode.Right;
+            }
+            return false;
+
+        }
 
         ///<summary>
         /// GetMinKey
@@ -361,6 +418,7 @@ namespace RedBlackTree
             return treeNode.Key;
 
         }
+       
         ///<summary>
         /// GetMaxKey
         /// Returns the maximum key value
@@ -381,6 +439,7 @@ namespace RedBlackTree
             return treeNode.Key;
 
         }
+        
         ///<summary>
         /// GetMinValue
         /// Returns the object having the minimum key value
@@ -389,6 +448,7 @@ namespace RedBlackTree
         {
             return GetData(GetMinKey());
         }
+       
         ///<summary>
         /// GetMaxValue
         /// Returns the object having the maximum key
@@ -397,6 +457,7 @@ namespace RedBlackTree
         {
             return GetData(GetMaxKey());
         }
+       
         ///<summary>
         /// GetEnumerator
         /// return an enumerator that returns the tree nodes in order
@@ -407,6 +468,7 @@ namespace RedBlackTree
             // data objects the nodes contain
             return Elements(true);
         }
+       
         ///<summary>
         /// Keys
         /// if(ascending is true, the keys will be returned in ascending order, else
@@ -416,10 +478,12 @@ namespace RedBlackTree
         {
             return Keys(true);
         }
+
         public RedBlackEnumerator<TKey, TValue> Keys(bool ascending)
         {
             return new RedBlackEnumerator<TKey, TValue>(rbTree, true, ascending);
         }
+      
         ///<summary>
         /// Values
         /// Provided for .NET compatibility. 
@@ -428,6 +492,7 @@ namespace RedBlackTree
         {
             return Elements(true);
         }
+       
         ///<summary>
         /// Elements
         /// Returns an enumeration of the data objects.
@@ -438,10 +503,12 @@ namespace RedBlackTree
         {
             return Elements(true);
         }
+
         public RedBlackEnumerator<TKey, TValue> Elements(bool ascending)
         {
             return new RedBlackEnumerator<TKey, TValue>(rbTree, false, ascending);
         }
+       
         ///<summary>
         /// IsEmpty
         /// Is the tree empty?
@@ -450,6 +517,7 @@ namespace RedBlackTree
         {
             return (rbTree == null);
         }
+       
         ///<summary>
         /// Remove
         /// removes the key and data object (delete)
@@ -489,6 +557,7 @@ namespace RedBlackTree
 
             intCount = intCount - 1;
         }
+       
         ///<summary>
         /// Delete
         /// Delete a node from the tree and restore red black properties
@@ -648,6 +717,7 @@ namespace RedBlackTree
 
             Remove(GetMinKey());
         }
+      
         ///<summary>
         /// RemoveMax
         /// removes the node with the maximum key
@@ -660,6 +730,7 @@ namespace RedBlackTree
 
             Remove(GetMaxKey());
         }
+       
         ///<summary>
         /// Clear
         /// Empties or clears the tree
@@ -670,6 +741,7 @@ namespace RedBlackTree
             intCount = 0;
            
         }
+        
         ///<summary>
         /// Size
         /// returns the size (number of nodes) in the tree
@@ -679,6 +751,7 @@ namespace RedBlackTree
             // number of keys
             return intCount;
         }
+      
         ///<summary>
         /// Equals
         ///<summary>
@@ -696,6 +769,7 @@ namespace RedBlackTree
             return (ToString().Equals(((RedBlackNode<TKey, TValue>)(obj)).ToString()));
 
         }
+        
         ///<summary>
         /// HashCode
         ///<summary>
@@ -703,6 +777,7 @@ namespace RedBlackTree
         {
             return intHashCode;
         }
+       
         ///<summary>
         /// ToString
         ///<summary>
