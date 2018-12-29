@@ -14,9 +14,9 @@ namespace KetamaHash
     public class KetamaNodeLocator: IKetamaHash
     {
 
-        private RedBlack<ulong, StoreNode> ketamaNodes = null;
+        private RedBlack<ulong, StoreNode> ketamaNodes = null;//红黑树存储环
         private List<StoreNode> shards = new List<StoreNode>(); // 真实机器节点
-        private int numReps = 160;
+        private int numReps = 160;//虚拟节点数
 
         private ManualResetEventSlim resetEvent = new ManualResetEventSlim(true);
 
@@ -25,6 +25,11 @@ namespace KetamaHash
             ketamaNodes = new RedBlack<ulong, StoreNode>("node");
         }
     
+       /// <summary>
+       /// 初始化添加
+       /// </summary>
+       /// <param name="nodes">真实节点</param>
+       /// <param name="nodeCopies">虚拟节点数</param>
         public void AddNode(List<StoreNode> nodes, int nodeCopies = 0)
         {
             resetEvent.Reset();
@@ -42,21 +47,14 @@ namespace KetamaHash
                 lst.Clear();
                 for (int i = 0; i < numReps; i++)
                 {
-                    //getKeyForNode方法为这组虚拟结点得到惟一名称 
-                    /** Murmur是一个16字节长度的数组，将16字节的数组每四个字节一组，分别对应一个虚拟结点，这就是为什么上面把虚拟结点四个划分一组的原因*/
+                    
                     try
                     {
-                        //byte[] digest = MurmurHashFactory.ComputeMurmur(node.ToString() + i);
-                        //for (int h = 0; h < 4; h++)
-                        //{
-                        //    long m = MurmurHashFactory.Hash(digest, h);
-                        //    ketamaNodes.Add(m, node);
-                        //    lst.Add(m);
-                        //}
+                        //直接使用MurmurHash
                         byte[] digest = MurmurHashFactory.ComputeMurmur(node.ToString() + i);
                         ulong key = MurmurHashFactory.Hash(digest);
                         ketamaNodes.Add(key, node);
-                        lst.Add(key);
+                        lst.Add(key);//有冲突时重新产生，理论上是不会的。
                     }
                     catch (RedBlackException ex)
                     {
@@ -81,10 +79,13 @@ namespace KetamaHash
             resetEvent.Set();
         }
 
+        /// <summary>
+        /// 单个节点
+        /// </summary>
+        /// <param name="node"></param>
         public void AddNode(StoreNode node)
         {
             resetEvent.Reset();
-           // ketamaNodes.ResetTree();
              List<ulong> lst = new List<ulong>();
             for (int i = 0; i < numReps; i++)
             {
@@ -92,18 +93,10 @@ namespace KetamaHash
                 /** 是一个16字节长度的数组，将16字节的数组每四个字节一组，分别对应一个虚拟结点，这就是为什么上面把虚拟结点四个划分一组的原因*/
                 try
                 {
-                    //byte[] digest = MurmurHashFactory.ComputeMurmur(node.ToString() + i);
-                    //for (int h = 0; h < 4; h++)
-                    //{
-                    //    long m = MurmurHashFactory.Hash(digest, h);
-                    //    ketamaNodes.Add(m, node);
-                    //    lst.Add(m);
-                    //}
+                    
                     byte[] digest = MurmurHashFactory.ComputeMurmur(node.ToString() + i);
                     ulong key = MurmurHashFactory.Hash(digest);
-                    //Console.WriteLine(node.ToString() + i + ":" + key);
                     ketamaNodes.Add(key, node);
-                   // lst.Add(key);
                 }
                 catch (RedBlackException ex)
                 {

@@ -11,6 +11,11 @@ namespace ConsoleApp1
 {
     class Program
     {
+        /*
+         *持续更新地址 https://github.com/jinyuttt/LoadBalanceHash.git
+         * 
+         * 
+         */
         static void Main(string[] args)
         {
             while (true)

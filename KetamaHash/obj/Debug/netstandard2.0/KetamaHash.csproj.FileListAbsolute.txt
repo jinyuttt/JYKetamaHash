@@ -23,3 +23,4 @@ E:\Study\vs\Hash\LoadBalanceHash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.
 E:\Study\vs\Hash\LoadBalanceHash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.AssemblyInfo.cs
 E:\Study\vs\Hash\LoadBalanceHash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.dll
 E:\Study\vs\Hash\LoadBalanceHash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.pdb
+E:\Study\vs\Hash\LoadBalanceHash\KetamaHash\obj\Debug\netstandard2.0\KetamaHash.csprojAssemblyReference.cache
