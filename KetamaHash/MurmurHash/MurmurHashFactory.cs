@@ -47,7 +47,7 @@ namespace KetamaHash.MurmurHash
             Murmur128
         }
 
-        private static readonly uint Ticks= 0xee6b27eb;
+      //  private static readonly uint Ticks= 0xee6b27eb;
 
         /// <summary>
         /// 转换

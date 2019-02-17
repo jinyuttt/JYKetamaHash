@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace KetamaHash
 {
-   public interface IKetamaHash
+    public interface IKetamaHash
     {
 
         /// <summary>
@@ -20,13 +18,26 @@ namespace KetamaHash
         /// <param name="node"></param>
         void AddNode(StoreNode node);
 
+        /// <summary>
+        /// 移除节点
+        /// </summary>
+        /// <param name="node"></param>
         void Remove(StoreNode node);
 
+       /// <summary>
+       /// 获取节点
+       /// </summary>
+       /// <param name="k"></param>
+       /// <returns></returns>
          StoreNode GetPrimary(string k);
 
-        double Test();
+        /// <summary>
+        /// 获取节点
+        /// </summary>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        StoreNode GetPrimary(byte[] k);
 
-        void Print();
 
     }
 }

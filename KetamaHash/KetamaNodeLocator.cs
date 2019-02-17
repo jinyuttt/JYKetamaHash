@@ -29,7 +29,7 @@ namespace KetamaHash
        /// 初始化添加
        /// </summary>
        /// <param name="nodes">真实节点</param>
-       /// <param name="nodeCopies">虚拟节点数</param>
+       /// <param name="nodeCopies">每个真实节点组合的虚拟节点数</param>
         public void AddNode(List<StoreNode> nodes, int nodeCopies = 0)
         {
             resetEvent.Reset();
@@ -151,9 +151,22 @@ namespace KetamaHash
         /// <summary>
         /// 获取节点
         /// </summary>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public StoreNode GetPrimary(byte[] k)
+        {
+            Murmur128 murmur = MurmurHashFactory.MurmurHash.Create128((uint)Environment.TickCount);
+            byte[] digest = murmur.ComputeHash(k);
+            ulong key = MurmurHashFactory.Hash(digest);
+            return GetNodeForKey(key);
+        }
+
+        /// <summary>
+        /// 获取节点
+        /// </summary>
         /// <param name="hash"></param>
         /// <returns></returns>
-      private  StoreNode GetNodeForKey(ulong hash)
+        private  StoreNode GetNodeForKey(ulong hash)
         {
             //string rv=null;
             ulong key = hash;
@@ -169,35 +182,7 @@ namespace KetamaHash
             return cirCle.Value;
                  
         }
-
+      
        
-
-        /// <summary>
-        /// 测试使用
-        /// </summary>
-        public void Print()
-        {
-            //using (StreamWriter sw = new StreamWriter("allkeys.csv"))
-            //{
-            //    foreach(var item in dicnodes)
-            //    {
-            //        sw.WriteLine(item.Key + "," + item.Value);
-            //    }
-            //}
-            //using (StreamWriter sw = new StreamWriter("search.csv"))
-            //{
-            //    foreach (var item in lstNodes)
-            //    {
-            //        sw.WriteLine(item);
-            //    }
-            //}
-        }
-
-
-        public double Test()
-        {
-            return 0;
-        }
-        
     }
 }

@@ -15,7 +15,7 @@ using System.Text;
 namespace KetamaHash
 {
     /// <summary>
-    /// 功能描述    ：HashRingNode  选取
+    /// 功能描述    ：HashRingNode  选取节点
     /// 创 建 者    ：jinyu
     /// 创建日期    ：2018/10/12 15:55:07 
     /// 最后修改者  ：jinyu
@@ -66,7 +66,6 @@ namespace KetamaHash
         private static List<string> GetAllStrings()
         {
             List<string> allStrings = new List<string>(EXE_TIMES);
-
             for (int i = 0; i < EXE_TIMES; i++)
             {
                 allStrings.Add(GenerateRandomString(rand.Next(200)));
@@ -103,7 +102,7 @@ namespace KetamaHash
             return sb.ToString();
         }
 
-      /// <summary>
+        /// <summary>
       /// 添加真实节点
       /// </summary>
       /// <param name="nodes"></param>
@@ -137,6 +136,15 @@ namespace KetamaHash
             return locator.GetPrimary(key);
         }
 
+        /// <summary>
+        /// 获取节点
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public StoreNode GetStoreNode(byte[]key)
+        {
+            return locator.GetPrimary(key);
+        }
 
         /// <summary>
         /// 获取节点
@@ -151,14 +159,5 @@ namespace KetamaHash
             return GetStoreNode(GetCurrentKey());
         }
 
-        public double Test()
-        {
-           return locator.Test();
-        }
-
-        public void Print()
-        {
-             locator.Print();
-        }
     }
 }

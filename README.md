@@ -1,5 +1,19 @@
-# LoadBalanceHash
-Hash一致实现负载均衡
+# JYKetamaHash
+Hash一致实现负载均衡  
+---------------------------------------------------------------------
+使用方法：  
+1.直接将数据发网服务端  
+   hashRing.GetCurrent();  
+2.将字符串Key映射到服务端  
+   hashRing.GetStoreNode(key)  
+3.将其它类型Key映射到服务端  
+   byte[]k=你的转换方式(k)  
+   hashRing.GetStoreNode(key)   
+   需要将Key转换（序列化为byte[])
+  
+  使用前需要将真实节点插入  
+    ConsistencyRing hashRing = new ConsistencyRing();  
+    hashRing.AddNode();  
 ---------------------------------------------------------------------
 1.保持以前的代码，主要是网上找到的  
 2.优化算法，结合MurmurHash以及红黑树存储，专门的接口。  

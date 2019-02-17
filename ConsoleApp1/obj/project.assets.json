@@ -208,14 +208,14 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "KetamaHash/1.0.0": {
+      "JYKetamaHash/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "compile": {
-          "bin/placeholder/KetamaHash.dll": {}
+          "bin/placeholder/JYKetamaHash.dll": {}
         },
         "runtime": {
-          "bin/placeholder/KetamaHash.dll": {}
+          "bin/placeholder/JYKetamaHash.dll": {}
         }
       }
     }
@@ -690,7 +690,7 @@
         "netstandard.library.nuspec"
       ]
     },
-    "KetamaHash/1.0.0": {
+    "JYKetamaHash/1.0.0": {
       "type": "project",
       "path": "../KetamaHash/KetamaHash.csproj",
       "msbuildProject": "../KetamaHash/KetamaHash.csproj"
@@ -698,7 +698,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "KetamaHash >= 1.0.0",
+      "JYKetamaHash >= 1.0.0",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
@@ -709,11 +709,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Study\\vs\\Hash\\LoadBalanceHash\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "E:\\Study\\vs\\KetamaHash\\KetamaHash\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "E:\\Study\\vs\\Hash\\LoadBalanceHash\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectPath": "E:\\Study\\vs\\KetamaHash\\KetamaHash\\ConsoleApp1\\ConsoleApp1.csproj",
       "packagesPath": "C:\\Users\\jinyu\\.nuget\\packages\\",
-      "outputPath": "E:\\Study\\vs\\Hash\\LoadBalanceHash\\ConsoleApp1\\obj\\",
+      "outputPath": "E:\\Study\\vs\\KetamaHash\\KetamaHash\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -734,8 +734,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "E:\\Study\\vs\\Hash\\LoadBalanceHash\\KetamaHash\\KetamaHash.csproj": {
-              "projectPath": "E:\\Study\\vs\\Hash\\LoadBalanceHash\\KetamaHash\\KetamaHash.csproj"
+            "E:\\Study\\vs\\KetamaHash\\KetamaHash\\KetamaHash\\KetamaHash.csproj": {
+              "projectPath": "E:\\Study\\vs\\KetamaHash\\KetamaHash\\KetamaHash\\KetamaHash.csproj"
             }
           }
         }

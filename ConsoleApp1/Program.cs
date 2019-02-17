@@ -1,21 +1,13 @@
 ﻿
 using KetamaHash;
-using KetamaHash.MurmurHash;
-using KetamaHash.NodeList;
-using RedBlackCS;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
     class Program
     {
-        /*
-         *持续更新地址 https://github.com/jinyuttt/LoadBalanceHash.git
-         * 
-         * 
-         */
+       
         static void Main(string[] args)
         {
             while (true)
@@ -23,6 +15,7 @@ namespace ConsoleApp1
                 Console.WriteLine("测试开始");
                DateTime start = DateTime.Now;
                 ConsistencyRing hashRing = new ConsistencyRing();
+                hashRing.AddNode();
                 Dictionary<string, int> sum = new Dictionary<string, int>();
                 int size = 1000000;
                 int value = 0;
