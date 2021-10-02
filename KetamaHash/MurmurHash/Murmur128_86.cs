@@ -18,11 +18,9 @@
 
 
 using System;
-using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using System.Text;
 
-namespace KetamaHash.MurmurHash
+namespace JYKetamaHash.MurmurHash
 {
     /* ============================================================================== 
     * 功能描述：Murmur128_86 
@@ -32,7 +30,7 @@ namespace KetamaHash.MurmurHash
     * 修改日期：2018 
     * ==============================================================================*/
 
-  internal  class Murmur128_86:Murmur128
+    internal class Murmur128_86 : Murmur128
     {
         const uint C1 = 0x239b961bU;
         const uint C2 = 0xab0e9789U;
@@ -138,7 +136,7 @@ namespace KetamaHash.MurmurHash
             uint len = (uint)Length;
             H1 ^= len; H2 ^= len; H3 ^= len; H4 ^= len;
 
-            H1 += (H2 + H3 + H4);
+            H1 += H2 + H3 + H4;
             H2 += H1; H3 += H1; H4 += H1;
 
             H1 = H1.FMix();
@@ -146,7 +144,7 @@ namespace KetamaHash.MurmurHash
             H3 = H3.FMix();
             H4 = H4.FMix();
 
-            H1 += (H2 + H3 + H4);
+            H1 += H2 + H3 + H4;
             H2 += H1; H3 += H1; H4 += H1;
 
             var result = new byte[16];

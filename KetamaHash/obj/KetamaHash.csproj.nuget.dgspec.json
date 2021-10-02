@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Study\\vs\\KetamaHash\\KetamaHash\\KetamaHash\\KetamaHash.csproj": {}
+    "E:\\study\\Hikari\\KetamaHash\\KetamaHash\\KetamaHash.csproj": {}
   },
   "projects": {
-    "E:\\Study\\vs\\KetamaHash\\KetamaHash\\KetamaHash\\KetamaHash.csproj": {
+    "E:\\study\\Hikari\\KetamaHash\\KetamaHash\\KetamaHash.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Study\\vs\\KetamaHash\\KetamaHash\\KetamaHash\\KetamaHash.csproj",
+        "projectUniqueName": "E:\\study\\Hikari\\KetamaHash\\KetamaHash\\KetamaHash.csproj",
         "projectName": "JYKetamaHash",
-        "projectPath": "E:\\Study\\vs\\KetamaHash\\KetamaHash\\KetamaHash\\KetamaHash.csproj",
+        "projectPath": "E:\\study\\Hikari\\KetamaHash\\KetamaHash\\KetamaHash.csproj",
         "packagesPath": "C:\\Users\\jinyu\\.nuget\\packages\\",
-        "outputPath": "E:\\Study\\vs\\KetamaHash\\KetamaHash\\KetamaHash\\obj\\",
+        "outputPath": "E:\\study\\Hikari\\KetamaHash\\KetamaHash\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "d:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\jinyu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,11 +26,12 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "d:\\Program Files\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+          "https://aka.ms/maui-preview/index.jsont": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -42,6 +43,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "dependencies": {
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -51,10 +53,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
         }
       }
     }

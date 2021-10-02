@@ -7,21 +7,18 @@
 ///4. All paths from a node to its leaves contain the same number of black nodes.
 ///</summary>
 
-using System.Collections;
-using System.Text;
 using System;
-using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace RedBlackTree
 {
-   /// <summary>
-   /// 红黑树结构
-   /// </summary>
-   /// <typeparam name="TKey"></typeparam>
-   /// <typeparam name="TValue"></typeparam>
+    /// <summary>
+    /// 红黑树结构
+    /// </summary>
+    /// <typeparam name="TKey"></typeparam>
+    /// <typeparam name="TValue"></typeparam>
     public class RedBlack<TKey, TValue> where TKey : IComparable
     {
         // the number of nodes contained in the tree

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KetamaHash
+namespace JYKetamaHash
 {
     public interface IKetamaHash
     {
@@ -24,12 +24,12 @@ namespace KetamaHash
         /// <param name="node"></param>
         void Remove(StoreNode node);
 
-       /// <summary>
-       /// 获取节点
-       /// </summary>
-       /// <param name="k"></param>
-       /// <returns></returns>
-         StoreNode GetPrimary(string k);
+        /// <summary>
+        /// 获取节点
+        /// </summary>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        StoreNode GetPrimary(string k);
 
         /// <summary>
         /// 获取节点

@@ -18,11 +18,9 @@
 
 
 using System;
-using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using System.Text;
 
-namespace KetamaHash.MurmurHash
+namespace JYKetamaHash.MurmurHash
 {
     /* ============================================================================== 
     * 功能描述：Murmur128_64 
@@ -32,7 +30,7 @@ namespace KetamaHash.MurmurHash
     * 修改日期：2018 
     * ==============================================================================*/
 
-  internal  class Murmur128_64 : Murmur128
+    internal class Murmur128_64 : Murmur128
     {
         const ulong C1 = 0x87c37b91114253d5;
         const ulong C2 = 0x4cf5ad432745937f;

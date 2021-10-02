@@ -17,12 +17,9 @@
 #endregion
 
 
-using System;
-using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using System.Text;
 
-namespace KetamaHash.MurmurHash
+namespace JYKetamaHash.MurmurHash
 {
     /* ============================================================================== 
     * 功能描述：Murmur64 
@@ -32,7 +29,7 @@ namespace KetamaHash.MurmurHash
     * 修改日期：2018 
     * ==============================================================================*/
 
-   internal class Murmur64: Murmur32
+    internal class Murmur64 : Murmur32
     {
         public Murmur64(uint seed = 0)
             : base(seed)
@@ -53,7 +50,7 @@ namespace KetamaHash.MurmurHash
             int alignedLength = start + (length - remainder);
 
             for (int i = start; i < alignedLength; i += 4)
-                H1 = (((H1 ^ (((data.ToUInt32(i) * C1).RotateLeft(15)) * C2)).RotateLeft(13)) * 5) + 0xe6546b64;
+                H1 = (H1 ^ (data.ToUInt32(i) * C1).RotateLeft(15) * C2).RotateLeft(13) * 5 + 0xe6546b64;
 
             if (remainder > 0)
                 Tail(data, alignedLength, remainder);

@@ -18,11 +18,9 @@
 
 
 using System;
-using System.Collections.Generic;
 using System.Security.Cryptography;
-using System.Text;
 
-namespace KetamaHash.MurmurHash
+namespace JYKetamaHash.MurmurHash
 {
     /* ============================================================================== 
     * 功能描述：Murmur32 

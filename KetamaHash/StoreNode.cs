@@ -17,11 +17,7 @@
 #endregion
 
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace KetamaHash
+namespace JYKetamaHash
 {
     /* ============================================================================== 
     * 功能描述：StoreNode 
@@ -31,7 +27,7 @@ namespace KetamaHash
     * 修改日期：2018 
     * ==============================================================================*/
 
-   public class StoreNode
+    public class StoreNode
     {
         public const int KeyLen = 40;
         public string Name { get; set; }
@@ -55,14 +51,14 @@ namespace KetamaHash
             {
                 return false;
             }
-            if ((obj.GetType().Equals(this.GetType())) == false)
+            if (obj.GetType().Equals(GetType()) == false)
             {
                 return false;
             }
             StoreNode temp = null;
             temp = (StoreNode)obj;
 
-            return this.ToString().Equals(temp.ToString());
+            return ToString().Equals(temp.ToString());
         }
     }
 }

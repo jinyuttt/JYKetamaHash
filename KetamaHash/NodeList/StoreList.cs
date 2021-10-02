@@ -19,11 +19,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
-using System.Collections;
+using JYKetamaHash;
 
-namespace KetamaHash.NodeList
+namespace JYKetamaHash.NodeList
 {
     /* ============================================================================== 
     * 功能描述：StoreList 测试项目
@@ -80,19 +79,19 @@ namespace KetamaHash.NodeList
         {
             int low = 0;
             int high = lst.Keys.Count;
-            TKey findKey = default(TKey);
+            TKey findKey = default;
             bool isFind = false;
             int middle = 0;
             while (low <= high)
             {
                 middle = (low + high) / 2;
-                if(middle==lst.Count)
+                if (middle == lst.Count)
                 {
-                    if(key.CompareTo(lst.Keys[middle-1])>0)
+                    if (key.CompareTo(lst.Keys[middle - 1]) > 0)
                     {
                         return null;
                     }
-                   else
+                    else
                     {
                         findKey = lst.Keys[middle - 1];
                         break;
@@ -109,7 +108,7 @@ namespace KetamaHash.NodeList
                 {
                     //大于当前值
                     low = middle + 1;
-                    if (middle< lst.Keys.Count-1&&key.CompareTo(lst.Keys[middle + 1]) <= 0)
+                    if (middle < lst.Keys.Count - 1 && key.CompareTo(lst.Keys[middle + 1]) <= 0)
                     {
                         findKey = lst.Keys[middle];
                         isFind = true;
@@ -119,7 +118,7 @@ namespace KetamaHash.NodeList
                 else if (result < 0)
                 {
                     high = middle - 1;
-                    if (middle > 0&&key.CompareTo(lst.Keys[middle - 1]) >= 0)
+                    if (middle > 0 && key.CompareTo(lst.Keys[middle - 1]) >= 0)
                     {
                         findKey = lst.Keys[middle];
                         isFind = true;
@@ -176,13 +175,13 @@ namespace KetamaHash.NodeList
 
         internal void UpdateSort()
         {
-           
+
         }
 
-       
-        
 
-       
+
+
+
 
         public NodeData<TKey, TValue> First()
         {

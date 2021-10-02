@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <PackageId>JYKetamaHash</PackageId>
     <Authors>jinyu成都</Authors>
     <Description>hash一致算法负载均衡</Description>

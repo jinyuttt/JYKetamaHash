@@ -17,11 +17,7 @@
 #endregion
 
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace KetamaHash.NodeList
+namespace JYKetamaHash.NodeList
 {
     /* ============================================================================== 
     * 功能描述：NodeValue 
@@ -31,7 +27,7 @@ namespace KetamaHash.NodeList
     * 修改日期：2018 
     * ==============================================================================*/
 
-   public class NodeData<TKey,TValue>
+    public class NodeData<TKey, TValue>
     {
         public TKey Key { get; set; }
         public TValue Value { get; set; }

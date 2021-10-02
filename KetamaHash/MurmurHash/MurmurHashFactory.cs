@@ -18,11 +18,10 @@
 
 
 using System;
-using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace KetamaHash.MurmurHash
+namespace JYKetamaHash.MurmurHash
 {
     /* ============================================================================== 
     * 功能描述：MurmurHashFactory 
@@ -47,7 +46,7 @@ namespace KetamaHash.MurmurHash
             Murmur128
         }
 
-      //  private static readonly uint Ticks= 0xee6b27eb;
+        //  private static readonly uint Ticks= 0xee6b27eb;
 
         /// <summary>
         /// 转换
@@ -55,7 +54,7 @@ namespace KetamaHash.MurmurHash
         /// <param name="digest"></param>
         /// <param name="nTime"></param>
         /// <returns></returns>
-        public static ulong Hash(byte[] digest, int nTime=0)
+        public static ulong Hash(byte[] digest, int nTime = 0)
         {
 
             //long rv = ((long)(digest[3 + nTime * 4] & 0xFF) << 24)
@@ -69,7 +68,7 @@ namespace KetamaHash.MurmurHash
             ulong hashCode = a ^ b;
             return hashCode;
         }
-       
+
 
         /// <summary>
         /// MurmurHash
@@ -78,7 +77,7 @@ namespace KetamaHash.MurmurHash
         /// <returns></returns>
         public static byte[] ComputeMurmur(string k)
         {
-            Murmur128 murmur =MurmurHash.Create128((uint)Environment.TickCount);
+            Murmur128 murmur = MurmurHash.Create128((uint)Environment.TickCount);
             byte[] digest = murmur.ComputeHash(Encoding.UTF8.GetBytes(k));
             murmur.Clear();
             murmur.Dispose();
@@ -88,14 +87,14 @@ namespace KetamaHash.MurmurHash
         {
             public static Murmur32 Create32(uint seed = 0)
             {
-               
-                    return new Murmur64(seed);
+
+                return new Murmur64(seed);
             }
 
-            public static Murmur128 Create128(uint seed = 0,AlgorithmPreference preference = AlgorithmPreference.Auto)
+            public static Murmur128 Create128(uint seed = 0, AlgorithmPreference preference = AlgorithmPreference.Auto)
             {
                 var algorithm = Pick(seed, preference, s => new Murmur128_86(s), s => new Murmur128_64(s));
-                  
+
 
                 return algorithm as Murmur128;
             }

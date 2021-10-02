@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +10,7 @@ using System.Text;
 * Copyright (c) year 
 */
 
-namespace KetamaHash
+namespace JYKetamaHash
 {
     /// <summary>
     /// 功能描述    ：HashRingNode  选取节点
@@ -34,11 +32,11 @@ namespace KetamaHash
         private const int VIRTUAL_NODE_COUNT = 160;
 
 
-      private IKetamaHash locator = null;
+        private IKetamaHash locator = null;
 
-       
-       
-       
+
+
+
         /**
          * Gets the mock node by the material parameter
          *  测试使用的
@@ -53,10 +51,10 @@ namespace KetamaHash
 
             for (int k = 1; k <= nodeCount; k++)
             {
-                StoreNode node = new StoreNode() { Name = "Node", IP = "192.168.3." + (k+100), Port = 7123 + k };
+                StoreNode node = new StoreNode() { Name = "Node", IP = "192.168.3." + (k + 100), Port = 7123 + k };
                 nodes.Add(node);
             }
-           
+
             return nodes;
         }
 
@@ -93,7 +91,7 @@ namespace KetamaHash
          */
         private static string GenerateRandomString(int length)
         {
-           
+
             StringBuilder sb = new StringBuilder(length);
             for (int i = 0; i < length; i++)
             {
@@ -103,10 +101,10 @@ namespace KetamaHash
         }
 
         /// <summary>
-      /// 添加真实节点
-      /// </summary>
-      /// <param name="nodes"></param>
-        public void AddNode(StoreNode[] nodes=null)
+        /// 添加真实节点
+        /// </summary>
+        /// <param name="nodes"></param>
+        public void AddNode(StoreNode[] nodes = null)
         {
             // allKeys = GetAllStrings();
             List<StoreNode> lstNodes = null;
@@ -120,10 +118,10 @@ namespace KetamaHash
                 //测试代码
                 lstNodes = GetNodes(NODE_COUNT);
             }
-             locator = new KetamaNodeLocator();
+            locator = new KetamaNodeLocator();
             //
             locator.AddNode(lstNodes, VIRTUAL_NODE_COUNT);
-           
+
         }
 
         /// <summary>
@@ -141,7 +139,7 @@ namespace KetamaHash
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public StoreNode GetStoreNode(byte[]key)
+        public StoreNode GetStoreNode(byte[] key)
         {
             return locator.GetPrimary(key);
         }
@@ -152,7 +150,7 @@ namespace KetamaHash
         /// <returns></returns>
         public StoreNode GetCurrent()
         {
-            if(locator==null)
+            if (locator == null)
             {
                 AddNode(null);
             }

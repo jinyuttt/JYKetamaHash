@@ -1,5 +1,4 @@
-﻿
-using KetamaHash;
+﻿using JYKetamaHash;
 using System;
 using System.Collections.Generic;
 

@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{C9D00FB6-15D1-41E4-886E-0068BC6B19FC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KetamaHash", "KetamaHash\KetamaHash.csproj", "{C38C2DF7-6C3D-459A-AA07-0B3C69BD36B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JYKetamaHash", "KetamaHash\JYKetamaHash.csproj", "{C38C2DF7-6C3D-459A-AA07-0B3C69BD36B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
